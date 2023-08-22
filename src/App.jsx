@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import { Routes, Route, Outlet, Link } from "react-router-dom";
 import './css/styles.css';
 
@@ -17,7 +17,13 @@ import EWallet from './components/EWallet';
 
 // import { DATA } from './constants';
 
+const tele = window.Telgram.WebApp
+
 export default function App() {
+  useEffect(() => {
+    tele.ready();
+  });
+
   return (
     <div>
       <h1>My EWallet</h1>
